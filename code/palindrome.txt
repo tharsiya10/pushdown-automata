@@ -1,0 +1,20 @@
+input symbols: E, a, b
+stack symbols: T, Z
+states: 0, 1, 2
+initial state: 0
+initial stack symbol: T
+
+program:
+case state of 
+1: begin
+case next of 
+a: push A
+b: push B
+c: change 2
+end
+2: begin
+case top of 
+A: begin case next of a: pop end
+B: begin case next of b: pop end
+Z: pop
+end
